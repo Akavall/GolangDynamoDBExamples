@@ -41,7 +41,7 @@ func main() {
 	fmt.Println(result)
 
 	if err != nil {
-		panic(fmt.Sprintf("failed to get Record from DynamoDB, %v", err))
+		panic(fmt.Sprintf("failed to delete Record from DynamoDB, %v", err))
 	} else {
 		fmt.Println("Item deleted successfully")
 	}
