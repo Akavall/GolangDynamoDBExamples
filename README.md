@@ -1,10 +1,14 @@
 To play around:
 
 ```
-python make_tables.py
+go run create_table.go # or python create_table.py
 go run put_item.go
 go run get_item.go
 ```
+
+(You might notice that go commands are a little slow,
+this is due to loading libraries, this will not 
+be a problem in your app)
 
 To delete the created table:
 
