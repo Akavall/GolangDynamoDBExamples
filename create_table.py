@@ -7,22 +7,22 @@ table = dynamodb.create_table(
     TableName='Albums',
     KeySchema=[
         {
-            'AttributeName': 'year',
+            'AttributeName': 'artist',
             'KeyType': 'HASH'  #Partition key
         },
         {
-            'AttributeName': 'title',
+            'AttributeName': 'year',
             'KeyType': 'RANGE'  #Sort key
         }
     ],
     AttributeDefinitions=[
         {
-            'AttributeName': 'year',
-            'AttributeType': 'N'
+            'AttributeName': 'artist',
+            'AttributeType': 'S'
         },
         {
-            'AttributeName': 'title',
-            'AttributeType': 'S'
+            'AttributeName': 'year',
+            'AttributeType': 'N'
         },
 
     ],

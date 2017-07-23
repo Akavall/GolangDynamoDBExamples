@@ -13,9 +13,10 @@ import (
 )
 
 type Record struct {
-	Year  int    `dynamodbav:"year"`
-	Title string `dynamodbav:"title"`
-	Songs []string
+	Artist string   `dynamodbav:"artist"`
+	Year   int      `dynamodbav:"year"`
+	Title  string   `dynamodbav:"title"`
+	Songs  []string `dynamodbav:"songs"`
 }
 
 func main() {
@@ -28,11 +29,11 @@ func main() {
 
 	input := &dynamodb.GetItemInput{
 		Key: map[string]*dynamodb.AttributeValue{
+			"artist": {
+				S: aws.String("Bad Religion"),
+			},
 			"year": {
 				N: aws.String("1991"),
-			},
-			"title": {
-				S: aws.String("Generator"),
 			},
 		},
 		TableName: aws.String("Albums"),
