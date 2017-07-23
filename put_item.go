@@ -12,9 +12,10 @@ import (
 )
 
 type Record struct {
-	Year  int    `dynamodbav:"year"`
-	Title string `dynamodbav:"title"`
-	Songs []string
+	Artist string   `dynamodbav:"artist"`
+	Year   int      `dynamodbav:"year"`
+	Title  string   `dynamodbav:"title"`
+	Songs  []string `dynamodbav:"songs"`
 }
 
 func main() {
@@ -26,9 +27,10 @@ func main() {
 	svc := dynamodb.New(sess)
 
 	r := Record{
-		Year:  1991,
-		Title: "Generator",
-		Songs: []string{"No Direction", "The Answer"},
+		Artist: "Bad Religion",
+		Year:   1991,
+		Title:  "Generator",
+		Songs:  []string{"No Direction", "The Answer"},
 	}
 
 	av, err := dynamodbattribute.MarshalMap(r)
